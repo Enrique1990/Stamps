@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Picture</h1>
+    <form action="/home/editsubmit" method="post">
+        <input type="hidden" name = "id" value ="<?=$stamps->id ?>">
+
+        <label>Year :</label><br><input type="input" name = "year" value ="<?=$stamps->year ?>"><br>
+        <label>Name :</label><br><input type="text" name = "name" value ="<?=$stamps->name ?>"><br>
+        <label>Description :</label><br><input type="text" name = "description" value ="<?=$stamps->description ?>"><br>
+        <label>Collection :</label><br><input type="text" name = "collection" value ="<?=$stamps->collection ?>"><br>
+        <label>Width :</label><br><input type="number" name = "width" value ="<?=$stamps->width ?>"><br>
+        <label>Heigth :</label><br><input type="number" name = "heigth" value ="<?=$stamps->heigth ?>"><br>
+
+        <button type="submit">Submit</button>
+	</form>
+
+	<p><a href="/home">Back</a></p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<style>
+    body {
+        padding:25px;
+        
+        /* display:flex;
+        flex-direction:row-reverse;
+        justify-content:flex-end; */
+    }
+    .card {
+      border:1px solid black;
+      text-align:center;
+      display: inline-block;
+      background-color: beige;
+    }
+
+    .card-img-top {
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+        <header class="top-top" style="text-align:center;"> 
+            <h1>List of Stamps</h1>
+            <!-- <button>Order by not glued</button> -->
+            <button >Order by Check repeat</button>
+        </header>
+  
+    
+	<?php foreach($stamps as $st) { ?>
+		<div class="card" style="width: 18rem" style="display:inline-block">
+			<img src="images/<?= $st->picture ?>" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title"><?= $st->name ?></h5>
+				<p class="card-text"><?= $st->description ?></p>
+				<p class="card-text">Quantity: <?= $st->quantity ?></p>
+			</div>
+
+			<div class="card-jo">
+				<a href="/home/increase?id=<?= $st->id ?>" class="card-body">Increase</a>
+				<a href="/home/delete?id=<?= $st->id ?>" class="card-body">Delete</a>
+				<a href="/home/edit?id=<?= $st->id ?>" class="card-body">Edit</a>
+			</div>
+		</div>
+	<?php } ?>
+
+	<br>
+	<a href="/home/add"><button>New</button></a>
+</body>
+</html>
+    
+        
